@@ -5,7 +5,7 @@ public class Kafe01 {
     public static void ubahNama(String nama) {
         nama = "Tamu";
         System.out.println("Di dalam fungsi: " + nama);
-    }
+    } 
 
     public static int hitungTotalHarga01(int pilihanMenu, int banyakItem) {
         int[] hargaItems = {15000, 20000, 22000, 12000, 10000, 18000};
