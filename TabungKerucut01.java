@@ -23,28 +23,65 @@ public class TabungKerucut01 {
     }
 
     public static void main(String[] args) {
-        
+
         Scanner sc = new Scanner(System.in);
 
-        double r, t, La, Lp, volKrct, volTbg;
+        double r = 0, t = 0, La, Lp, volKrct, volTbg;
+        int menu;
 
-        System.out.print("Masukkan jari-jari alas: ");
-        r = sc.nextDouble();
+        System.out.println("========================");
+        System.out.println("1. Menghitung luas lingkaran");
+        System.out.println("2. Menghitung volume tabung");
+        System.out.println("3. Menghitung luas permukaan tabung");
+        System.out.println("4. Menghitung volume kerucut");
+        System.out.println("0. Keluar");
+        System.out.println("========================");
 
-        System.out.print("Masukkan tinggi kerucut: ");
-        t = sc.nextDouble();
+        while (true) {
+            do {
+                System.out.print("\nMasukkan menu perhitungan: ");
+                menu = sc.nextInt();
 
-        La = luasLingkaran(r);
-        System.out.println("Luas alas adalah " + La);
+                if (menu == 0) {
+                    break;
+                }
 
-        Lp = luasPermukaanTabung(r, t);
-        System.out.println("Luas permukaan tabung adalah " + Lp);
+                if (menu < 1 || menu > 4) {
+                    System.out.println("Menu tidak tersedia.");
+                }
+            } while (menu < 1 || menu > 4);
 
-        volKrct = volumeKerucut(r, t);
-        System.out.println("Volume kerucut adalah " + volKrct);
+            if (menu == 0) {
+                System.out.println("Program dihentikan.");
+                break;
+            }
 
-        volTbg = volumeTabung(r, t);
-        System.out.println("Volume tabung adalah " + volTbg);
+            System.out.print("Masukkan jari-jari lingkaran: ");
+            r = sc.nextDouble();
+
+            if (menu == 1) {
+                La = luasLingkaran(r);
+                System.out.println("Luas lingkaran adalah " + La);
+            } else if (menu == 2) {
+                System.out.print("Masukkan tinggi bangun ruang: ");
+                t = sc.nextDouble();
+
+                volTbg = volumeTabung(r, t);
+                System.out.println("Volume tabung adalah " + volTbg);
+            } else if (menu == 3) {
+                System.out.print("Masukkan tinggi bangun ruang: ");
+                t = sc.nextDouble();
+
+                Lp = luasPermukaanTabung(r, t);
+                System.out.println("Luas permukaan tabung adalah " + Lp);
+            } else if (menu == 4) {
+                System.out.print("Masukkan tinggi bangun ruang: ");
+                t = sc.nextDouble();
+
+                volKrct = volumeKerucut(r, t);
+                System.out.println("Volume kerucut adalah " + volKrct);
+            }
+        }
 
         sc.close();
     }
