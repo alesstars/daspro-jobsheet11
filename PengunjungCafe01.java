@@ -21,7 +21,7 @@ public class PengunjungCafe01 {
         daftarPengunjung(7, "Doni", "Eti", "Fahmi", "Galih");
 
         System.out.println();
-
+ 
         int argumen1 = hitungTotalBelanja(15000);
         System.out.println("Total harga belanja (1 argumen): Rp" + argumen1);
         
