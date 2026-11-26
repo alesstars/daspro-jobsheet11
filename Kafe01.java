@@ -1,9 +1,44 @@
+import java.util.Scanner;
+
 public class Kafe01 {
-    public static void main(String[] args) {
-        Menu();
+
+    public static void ubahNama(String nama) {
+        nama = "Tamu";
+        System.out.println("Di dalam fungsi: " + nama);
     }
 
-    public static void Menu() {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        String nama = "Andi";
+        ubahNama(nama);
+        System.out.println("Di main: " + nama);
+
+        System.out.print("Masukkan nama pelanggan: ");
+        String namaPelanggan = sc.nextLine();
+        System.out.print("Apakah pelanggan adalah member? (y/n): ");
+        String isMember = sc.nextLine();
+        System.out.print("Jam kunjung pelanggan: ");
+        int jamKunjung = sc.nextInt();
+        System.out.println();
+
+        Menu(namaPelanggan, isMember, jamKunjung);
+
+        sc.close();
+    }
+
+    public static void Menu(String namaPelanggan, String isMember, int jamKunjung) {
+        System.out.println("Selamat datang, " + namaPelanggan + "!");
+
+        if (isMember.equalsIgnoreCase("y")) {
+            System.out.println("Anda adalah member, dapatkan diskon 10% untuk setiap pembelian!");
+        }
+
+        if (jamKunjung >= 14 || jamKunjung <= 16) {
+            System.out.println("Happy Hour! Diskon 20% untuk semua minuman.");
+        }
+
         System.out.println("==== MENU RESTO KAFE ====");
         System.out.println("1. Kopi Hitam - Rp 15,000");
         System.out.println("2. Cappuccino - Rp 20,000");
@@ -14,4 +49,6 @@ public class Kafe01 {
         System.out.println("===========================");
         System.out.println("Silahkan pilih menu yang Anda inginkan.");
     }
+
+    
 }
