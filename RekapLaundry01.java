@@ -14,16 +14,16 @@ public class RekapLaundry01 {
 
     static void tampilTabel(String[] layanan, int[] harga, String[] hari, int[][] data) {
         System.out.println("\n--- TABEL BERAT CUCIAN (KG) ---");
-        System.out.print("Layanan\t\tHarga\t");
+        System.out.printf("%-16s %-10s", "Layanan", "Harga/kg");
         for (String h : hari) {
-            System.out.print(h + "\t");
+            System.out.printf("%-10s", h);
         }
         System.out.println();
 
         for (int i = 0; i < layanan.length; i++) {
-            System.out.print(layanan[i] + "\t" + harga[i] + "\t");
+            System.out.printf("%-16s %-10d", layanan[i], harga[i]);
             for (int j = 0; j < hari.length; j++) {
-                System.out.print(data[i][j] + "\t");
+                System.out.printf("%-10d", data[i][j]);
             }
             System.out.println();
         }
