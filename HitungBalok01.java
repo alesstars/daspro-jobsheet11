@@ -29,7 +29,7 @@ public class HitungBalok01 {
 
             Lp = hitungLuasPermukaanBalok(p, l, t);
             System.out.println("Luas permukaan balok ke-" + i + " adalah: " + Lp);
-            }
+        }
 
         sc.close();
 
